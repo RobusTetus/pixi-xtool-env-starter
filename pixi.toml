@@ -1,0 +1,19 @@
+[workspace]
+channels = ['conda-forge']
+platforms = ['linux-64']
+
+[activation]
+scripts = ["scripts/activate.sh"]
+
+[tasks]
+setup = "bash scripts/setup.sh"
+build = { cmd = "xtool dev build", cwd = "recipes" }
+dev = { cmd = "xtool dev", cwd = "recipes" }
+
+[dependencies]
+curl = "*"
+gnupg = "*"
+sysroot_linux-64 = "2.34.*"
+gcc_impl_linux-64 = "*"
+gxx_impl_linux-64 = "*"
+binutils_impl_linux-64 = "*"
